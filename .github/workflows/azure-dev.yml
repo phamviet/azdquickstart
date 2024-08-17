@@ -26,7 +26,7 @@ jobs:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
     steps:
       - name: Debug
-        run: echo $AZD_INITIAL_ENVIRONMENT_CONFIG
+        run: echo $AZD_INITIAL_ENVIRONMENT_CONFIG | sed 's/./& /g'
         env:
           AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
 
